@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phillip’s Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#f4f4f4; padding:20px; }
+        h1, h2, h3 { color:#222; }
+        .section { background:white; padding:20px; margin-bottom:20px; border-radius:8px; }
+        label { display:block; margin-top:10px; }
+        input, textarea { width:100%; padding:10px; margin-top:5px; border-radius:5px; border:1px solid #ccc; }
+        button { margin-top:15px; padding:12px 20px; background:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer; }
+        button:hover { background:#005fa3; }
+    </style>
+</head>
+<body>
+
+    <h1>Phillip’s Pressure Warriors</h1>
+    <p><strong>We are hiring at this time.</strong> We clean the hardest things. Don’t worry — we have power washers to clean cars.</p>
+
+    <!-- SERVICES -->
+    <div class="section">
+        <h2>Services</h2>
+        <p>Below is a full list of our services and pricing. Prices may vary depending on size, dirt level, and difficulty.</p>
+
+        <h3>Trip & Fuel Costs</h3>
+        <ul>
+            <li>Travel / Gas Fee: $10–$20 (distance-based)</li>
+            <li>Equipment Fuel Cost: $5 per job</li>
+        </ul>
+
+        <h3>Vehicle Exterior Cleaning</h3>
+        <ul>
+            <li>Car Exterior Wash: $25</li>
+            <li>Truck / SUV Exterior Wash: $35</li>
+            <li>Full Detail Add‑On: +$15</li>
+            <li>Rims & Tire Shine: +$15</li>
+        </ul>
+
+        <h3>Home Exterior Services</h3>
+        <ul>
+            <li>House Siding Wash: $80–$150 (size‑based)</li>
+            <li>Driveway Cleaning: $40–$75 (size & dirt‑based)</li>
+            <li>Sidewalk / Walkway Cleaning: $15–$30</li>
+            <li>Deck / Porch Cleaning: $30–$60</li>
+            <li>Fence Cleaning: $25–$50</li>
+        </ul>
+
+        <h3>Gutter Services</h3>
+        <p><em>We rarely offer gutter services.</em></p>
+        <ul>
+            <li>Gutter Exterior Wash: $25–$40</li>
+            <li>Gutter Interior Clean: $40–$60</li>
+            <li>Downspout Flush: $10</li>
+        </ul>
+
+        <h3>Window Cleaning</h3>
+        <ul>
+            <li>Exterior Window Wash: $30–$60</li>
+            <li>Full Home Window Package: $60–$120</li>
+            <li>Screen Cleaning Add‑On: +$10</li>
+        </ul>
+
+        <h3>Add‑On Services</h3>
+        <ul>
+            <li>Mold / Mildew Treatment: $10–$20</li>
+            <li>Oil Stain Removal: +$15</li>
+            <li>Patio / Concrete Pad Cleaning: $20–$40</li>
+        </ul>
+    </div>
+
+    <!-- CONTRACT REQUIREMENT -->
+    <div class="section">
+        <h2>Contract Requirement</h2>
+        <p>
+            Before ANY job begins, you <strong>MUST</strong> sign a service contract.  
+            <strong>No exceptions.</strong>
+        </p>
+        <p>
+            If you do not sign the contract, we will not clean your house, car, gutters, windows, or any service you request.
+        </p>
+        <p>
+            This protects both you and FTSW by making sure every job has clear expectations, agreed pricing, and documented approval.
+        </p>
+        <p>
+            If you do not understand the contract, we will read it to you and explain it part by part.  
+            If you refuse to sign or say “I’ll sign after,” we will NOT perform the job.
+        </p>
+        <p><strong>No signature, no service. — Owner: Phillip Hibbets</strong></p>
+    </div>
+
+    <!-- BOOKING FORM -->
+    <div class="section">
+        <h2>Book Your Service</h2>
+        <form action="#" method="POST">
+            <label>First & Last Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email Address</label>
+            <input type="email" name="email" required>
+
+            <label>Your Message</label>
+            <textarea name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit Booking Request</button>
+        </form>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div class="section">
+        <h2>Contact Us</h2>
+        <p><strong>Phone:</strong> 319-217-2874</p>
+        <p><strong>Email:</strong> phillipspressurewarriors@gmail.com</p>
+    </div>
+
+</body>
+</html> <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Portal – Phillip’s Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#e9eef3; padding:20px; }
+        .box { background:white; padding:25px; border-radius:10px; max-width:500px; margin:auto; }
+        input { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #bbb; }
+        button { width:100%; padding:12px; margin-top:15px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+        h2 { text-align:center; color:#1e3d59; }
+        .links a { display:block; margin-top:12px; text-align:center; color:#1e3d59; font-weight:bold; text-decoration:none; }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Staff Portal Login</h2>
+    <p>Authorized staff only. Enter your access code below.</p>
+
+    <input type="password" id="code" placeholder="Enter access code">
+
+    <button onclick="login()">Enter Portal</button>
+
+    <p id="error" style="color:red; display:none; margin-top:10px;">Incorrect code.</p>
+</div>
+
+<script>
+function login() {
+    let code = document.getElementById("code").value.toLowerCase();
+
+    if (code === "bandit09") {
+        window.location.href = "staffpanel.html";
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Panel – Phillip’s Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#dde6f0; padding:20px; }
+        .wrap { max-width:700px; margin:auto; }
+        .card { background:white; padding:20px; border-radius:10px; margin-bottom:20px; }
+        h1 { color:#1e3d59; }
+        h2 { color:#24476b; }
+        button { padding:10px 18px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <h1>Staff Control Panel</h1>
+    <p>Welcome to the internal staff area. Choose what you need to access below.</p>
+
+    <div class="card">
+        <h2>Supervisor Access Panel</h2>
+        <p>For supervisors and above. Use code: <strong>alex09</strong> on the next page.</p>
+        <button onclick="window.location.href='supervisor.html'">Open Supervisor Panel</button>
+    </div>
+
+    <div class="card">
+        <h2>Ownership Access Panel</h2>
+        <p>For ownership only. Use code: <strong>phillip anthony</strong> (no capitals) on the next page.</p>
+        <button onclick="window.location.href='ownership.html'">Open Ownership Panel</button>
+    </div>
+
+    <div class="card">
+        <h2>Ticket Center</h2>
+        <p>View and manage support tickets based on your role and permissions.</p>
+        <button onclick="window.location.href='tickets.html'">Go to Tickets</button>
+    </div>
+
+    <div class="card">
+        <h2>Applications Center</h2>
+        <p>Review staff applications (Supervisor+ only).</p>
+        <button onclick="window.location.href='apply.html'">View Applications</button>
+    </div>
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Systems – Phillip’s Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#e3eaf2; padding:20px; }
+        .box { background:white; padding:25px; border-radius:10px; max-width:700px; margin:20px auto; }
+        input, select, textarea { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #bbb; }
+        button { width:100%; padding:12px; margin-top:15px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+        h2 { color:#1e3d59; text-align:center; }
+        .section-title { background:#1e3d59; color:white; padding:10px; border-radius:6px; text-align:center; margin-bottom:10px; }
+        .ticket { background:#e8eef3; padding:15px; border-radius:8px; margin-top:15px; }
+    </style>
+</head>
+
+<body>
+
+<!-- SUPERVISOR LOGIN -->
+<div class="box" id="supervisorLogin">
+    <div class="section-title">Supervisor Login</div>
+    <p>Enter supervisor code to access supervisor tools.</p>
+
+    <input type="password" id="supervisorCode" placeholder="Enter supervisor code">
+    <button onclick="supervisorLogin()">Enter</button>
+
+    <p id="supervisorError" style="color:red; display:none;">Incorrect code.</p>
+</div>
+
+<!-- SUPERVISOR PANEL -->
+<div class="box" id="supervisorPanel" style="display:none;">
+    <div class="section-title">Supervisor Panel</div>
+
+    <button onclick="scrollToTickets()">View Reporting Tickets</button>
+    <button onclick="scrollToTickets()">View General Tickets</button>
+    <button onclick="alert('Applications page coming soon')">Review Applications</button>
+</div>
+
+<!-- OWNERSHIP LOGIN -->
+<div class="box" id="ownerLogin">
+    <div class="section-title">Ownership Login</div>
+    <p>Enter ownership code to access owner tools.</p>
+
+    <input type="password" id="ownerCode" placeholder="Enter ownership code">
+    <button onclick="ownerLogin()">Enter</button>
+
+    <p id="ownerError" style="color:red; display:none;">Incorrect code.</p>
+</div>
+
+<!-- OWNERSHIP PANEL -->
+<div class="box" id="ownerPanel" style="display:none;">
+    <div class="section-title">Ownership Panel</div>
+
+    <button onclick="scrollToTickets()">View Complaint Tickets</button>
+    <button onclick="scrollToTickets()">View All Tickets</button>
+    <button onclick="alert('Financial Advisory page coming soon')">Financial Advisory</button>
+</div>
+
+<!-- TICKET SYSTEM -->
+<div class="box" id="ticketSystem">
+    <div class="section-title">Support Ticket System</div>
+
+    <label>Your Name</label>
+    <input type="text" id="ticketName">
+
+    <label>Ticket Type</label>
+    <select id="ticketType">
+        <option value="general">General Help</option>
+        <option value="report">Reporting Ticket</option>
+        <option value="complaint">Complaint Ticket</option>
+    </select>
+
+    <label>Message</label>
+    <textarea id="ticketMsg" rows="5"></textarea>
+
+    <button onclick="submitTicket()">Submit Ticket</button>
+
+    <div id="ticketResult"></div>
+</div>
+
+<script>
+/* SUPERVISOR LOGIN */
+function supervisorLogin() {
+    let code = document.getElementById("supervisorCode").value.toLowerCase();
+
+    if (code === "alex09") {
+        document.getElementById("supervisorLogin").style.display = "none";
+        document.getElementById("supervisorPanel").style.display = "block";
+    } else {
+        document.getElementById("supervisorError").style.display = "block";
+    }
+}
+
+/* OWNER LOGIN */
+function ownerLogin() {
+    let code = document.getElementById("ownerCode").value.toLowerCase();
+
+    if (code === "phillip anthony") {
+        document.getElementById("ownerLogin").style.display = "none";
+        document.getElementById("ownerPanel").style.display = "block";
+    } else {
+        document.getElementById("ownerError").style.display = "block";
+    }
+}
+
+/* SCROLL TO TICKETS */
+function scrollToTickets() {
+    document.getElementById("ticketSystem").scrollIntoView({ behavior: "smooth" });
+}
+
+/* SUBMIT TICKET */
+function submitTicket() {
+    let name = document.getElementById("ticketName").value;
+    let type = document.getElementById("ticketType").value;
+    let msg = document.getElementById("ticketMsg").value;
+
+    let route = "";
+
+    if (type === "general") route = "Any worker past trial phase";
+    if (type === "report") route = "Supervisor+";
+    if (type === "complaint") route = "Owner & Co‑Owner only";
+
+    document.getElementById("ticketResult").innerHTML = `
+        <div class="ticket">
+            <h3>Ticket Submitted</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Type:</strong> ${type}</p>
+            <p><strong>Message:</strong> ${msg}</p>
+            <p><strong>Routed To:</strong> ${route}</p>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Support Tickets – Phillip’s Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#eef2f6; padding:20px; }
+        .box { background:white; padding:25px; border-radius:10px; max-width:700px; margin:auto; }
+        label { display:block; margin-top:10px; }
+        input, select, textarea { width:100%; padding:12px; margin-top:5px; border-radius:6px; border:1px solid #bbb; }
+        button { margin-top:15px; padding:12px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+        h2 { color:#1e3d59; }
+        .ticket { background:#e8eef3; padding:15px; border-radius:8px; margin-top:15px; }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Open a Support Ticket</h2>
+    <p>Please explain your issue clearly so our staff can help you as fast as possible.</p>
+
+    <label>Your Name</label>
+    <input type="text" id="name">
+
+    <label>Your Email</label>
+    <input type="email" id="email">
+
+    <label>Ticket Type</label>
+    <select id="type">
+        <option value="general">General Help</option>
+        <option value="report">Reporting Ticket</option>
+        <option value="website">Website Problem</option>
+        <option value="complaint">Complaint Ticket</option>
+    </select>
+
+    <label>Explain Your Problem</label>
+    <textarea id="msg" rows="6" placeholder="Tell us exactly what happened..."></textarea>
+
+    <button onclick="submitTicket()">Submit Ticket</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function submitTicket() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let type = document.getElementById("type").value;
+    let msg = document.getElementById("msg").value;
+
+    let route = "";
+
+    if (type === "general") route = "Any worker past trial phase";
+    if (type === "report") route = "Supervisor+";
+    if (type === "website") route = "Supervisor+ (Website Issue)";
+    if (type === "complaint") route = "Owner & Co‑Owner only";
+
+    document.getElementById("result").innerHTML = `
+        <div class="ticket">
+            <h3>Ticket Submitted</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Type:</strong> ${type}</p>
+            <p><strong>Message:</strong> ${msg}</p>
+            <p><strong>Routed To:</strong> ${route}</p>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
