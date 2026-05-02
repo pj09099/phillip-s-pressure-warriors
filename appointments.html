@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book An Appointment – Phillip's Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#f4f4f4; padding:20px; }
+        h1, h2 { color:#222; }
+        .container { max-width:700px; margin:auto; }
+        .section { background:white; padding:25px; border-radius:8px; margin-bottom:20px; }
+        label { display:block; margin-top:15px; font-weight:bold; color:#333; }
+        input, textarea, select { width:100%; padding:12px; margin-top:5px; border-radius:5px; border:1px solid #ccc; box-sizing:border-box; }
+        textarea { resize:vertical; }
+        button { margin-top:20px; padding:12px 20px; background:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold; font-size:1em; }
+        button:hover { background:#005fa3; }
+        .required { color:red; }
+        .back-link { text-align:center; margin-top:20px; }
+        .back-link a { color:#0077cc; text-decoration:none; font-weight:bold; }
+        .back-link a:hover { text-decoration:underline; }
+        .success { display:none; background:#d4edda; border:1px solid #c3e6cb; color:#155724; padding:15px; border-radius:5px; margin-bottom:20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📅 Book An Appointment</h1>
+    <p style="color:#666;">Schedule your pressure washing service with Phillip's Pressure Warriors</p>
+
+    <div id="successMessage" class="success">
+        ✅ <strong>Appointment Booked!</strong> Thank you! We'll review your request and contact you to confirm.
+    </div>
+
+    <div class="section">
+        <form id="appointmentForm">
+            <label>First & Last Name <span class="required">*</span></label>
+            <input type="text" id="name" required placeholder="John Doe">
+
+            <label>Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" required placeholder="(555) 123-4567">
+
+            <label>Email Address <span style="color:#999;">(Optional)</span></label>
+            <input type="email" id="email" placeholder="your@email.com">
+
+            <label>Street Address <span class="required">*</span></label>
+            <input type="text" id="address" required placeholder="123 Main Street">
+
+            <label>City <span class="required">*</span></label>
+            <input type="text" id="city" required placeholder="Fairfield">
+
+            <label>Preferred Date & Time <span class="required">*</span></label>
+            <input type="datetime-local" id="appointmentTime" required>
+
+            <label>Service Requested <span class="required">*</span></label>
+            <select id="service" required>
+                <option value="">-- Select a service --</option>
+                <option value="Car Washing">🚗 Car Washing</option>
+                <option value="Truck/SUV Washing">🚙 Truck/SUV Washing</option>
+                <option value="House Siding">🏠 House Siding Wash</option>
+                <option value="Driveway Cleaning">🛣️ Driveway Cleaning</option>
+                <option value="Deck/Porch Cleaning">🪑 Deck/Porch Cleaning</option>
+                <option value="Gutter Services">🪜 Gutter Services</option>
+                <option value="Window Cleaning">🪟 Window Cleaning</option>
+                <option value="Other">📝 Other</option>
+            </select>
+
+            <label>Additional Details</label>
+            <textarea id="details" rows="4" placeholder="Tell us more about your service request (optional)..."></textarea>
+
+            <button type="submit">📅 Book Appointment</button>
+        </form>
+    </div>
+
+    <div class="back-link">
+        <a href="index.html">← Back to Home</a>
+    </div>
+</div>
+
+<script>
+document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Collect form data
+    const appointment = {
+        id: Date.now(),
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        city: document.getElementById('city').value,
+        appointmentTime: document.getElementById('appointmentTime').value,
+        service: document.getElementById('service').value,
+        details: document.getElementById('details').value,
+        submittedAt: new Date().toLocaleString()
+    };
+
+    // Get existing appointments from localStorage
+    let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    
+    // Add new appointment
+    appointments.push(appointment);
+    
+    // Save to localStorage
+    localStorage.setItem('appointments', JSON.stringify(appointments));
+
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+    
+    // Reset form
+    document.getElementById('appointmentForm').reset();
+
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+    }, 5000);
+});
+</script>
+
+</body>
+</html>

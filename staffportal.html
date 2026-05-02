@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Portal – Phillip's Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#e9eef3; padding:20px; }
+        .box { background:white; padding:25px; border-radius:10px; max-width:500px; margin:auto; }
+        input { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #bbb; }
+        button { width:100%; padding:12px; margin-top:15px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+        h2 { text-align:center; color:#1e3d59; }
+        .links a { display:block; margin-top:12px; text-align:center; color:#1e3d59; font-weight:bold; text-decoration:none; }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Staff Portal Login</h2>
+    <p>Authorized staff only. Enter your access code below.</p>
+
+    <input type="password" id="code" placeholder="Enter access code">
+
+    <button onclick="login()">Enter Portal</button>
+
+    <p id="error" style="color:red; display:none; margin-top:10px;">Incorrect code.</p>
+</div>
+
+<script>
+function login() {
+    let code = document.getElementById("code").value.toLowerCase();
+
+    if (code === "bandit09") {
+        window.location.href = "staffpanel.html";
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>

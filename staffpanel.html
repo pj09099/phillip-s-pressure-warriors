@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Panel – Phillip's Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#dde6f0; padding:20px; }
+        .wrap { max-width:700px; margin:auto; }
+        .card { background:white; padding:20px; border-radius:10px; margin-bottom:20px; }
+        h1 { color:#1e3d59; }
+        h2 { color:#24476b; }
+        button { padding:10px 18px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <h1>Staff Control Panel</h1>
+    <p>Welcome to the internal staff area. Choose what you need to access below.</p>
+
+    <div class="card">
+        <h2>Supervisor Access Panel</h2>
+        <p>For supervisors and above. Use code: <strong>alex09</strong> on the next page.</p>
+        <button onclick="window.location.href='supervisor.html'">Open Supervisor Panel</button>
+    </div>
+
+    <div class="card">
+        <h2>Ownership Access Panel</h2>
+        <p>For ownership only. Use code: <strong>phillip anthony</strong> (no capitals) on the next page.</p>
+        <button onclick="window.location.href='ownership.html'">Open Ownership Panel</button>
+    </div>
+
+    <div class="card">
+        <h2>Ticket Center</h2>
+        <p>View and manage support tickets based on your role and permissions.</p>
+        <button onclick="window.location.href='tickets.html'">Go to Tickets</button>
+    </div>
+
+    <div class="card">
+        <h2>Applications Center</h2>
+        <p>Review staff applications (Supervisor+ only).</p>
+        <button onclick="window.location.href='apply.html'">View Applications</button>
+    </div>
+</div>
+
+</body>
+</html>

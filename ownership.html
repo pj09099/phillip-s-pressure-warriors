@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ownership Portal – Appointments – Phillip's Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#e3eaf2; padding:20px; }
+        .box { background:white; padding:25px; border-radius:10px; max-width:900px; margin:20px auto; }
+        input { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #bbb; box-sizing:border-box; }
+        button { width:100%; padding:12px; margin-top:15px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+        h2 { color:#1e3d59; text-align:center; }
+        .section-title { background:#1e3d59; color:white; padding:10px; border-radius:6px; text-align:center; margin-bottom:10px; }
+        .appointment-card { background:#f0f5fa; padding:15px; border-radius:8px; margin-top:15px; border-left:5px solid #0077cc; }
+        .appointment-card h3 { color:#1e3d59; margin-top:0; }
+        .appointment-detail { margin:8px 0; }
+        .appointment-detail strong { color:#1e3d59; }
+        .no-appointments { text-align:center; color:#999; padding:20px; font-style:italic; }
+        #loginBox { display:block; }
+        #appointmentsList { display:none; }
+        .error { color:red; display:none; margin-top:10px; }
+    </style>
+</head>
+
+<body>
+
+<!-- LOGIN BOX -->
+<div class="box" id="loginBox">
+    <div class="section-title">Ownership Login</div>
+    <p>Enter ownership code to view appointment bookings.</p>
+
+    <input type="password" id="ownerCode" placeholder="Enter ownership code">
+    <button onclick="ownerLogin()">Access Appointments</button>
+
+    <p id="ownerError" class="error">Incorrect code.</p>
+</div>
+
+<!-- APPOINTMENTS LIST -->
+<div class="box" id="appointmentsList">
+    <div class="section-title">📅 Appointment Bookings</div>
+    
+    <button onclick="logout()" style="background:#666;">Logout</button>
+
+    <div id="appointmentsContainer" style="margin-top:20px;"></div>
+</div>
+
+<script>
+function ownerLogin() {
+    let code = document.getElementById("ownerCode").value.toLowerCase();
+
+    if (code === "phillip anthony") {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("appointmentsList").style.display = "block";
+        displayAppointments();
+    } else {
+        document.getElementById("ownerError").style.display = "block";
+    }
+}
+
+function logout() {
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("appointmentsList").style.display = "none";
+    document.getElementById("ownerCode").value = "";
+    document.getElementById("ownerError").style.display = "none";
+}
+
+function displayAppointments() {
+    const appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+    const container = document.getElementById('appointmentsContainer');
+
+    if (appointments.length === 0) {
+        container.innerHTML = '<div class="no-appointments">No appointments booked yet.</div>';
+        return;
+    }
+
+    // Sort by date (newest first)
+    const sorted = appointments.sort((a, b) => new Date(b.appointmentTime) - new Date(a.appointmentTime));
+
+    container.innerHTML = sorted.map(apt => `
+        <div class="appointment-card">
+            <h3>📋 ${apt.service}</h3>
+            <div class="appointment-detail">
+                <strong>👤 Name:</strong> ${apt.name}
+            </div>
+            <div class="appointment-detail">
+                <strong>📞 Phone:</strong> ${apt.phone}
+            </div>
+            <div class="appointment-detail">
+                <strong>📧 Email:</strong> ${apt.email || '(Not provided)'}
+            </div>
+            <div class="appointment-detail">
+                <strong>📍 Address:</strong> ${apt.address}, ${apt.city}
+            </div>
+            <div class="appointment-detail">
+                <strong>🕐 Requested Time:</strong> ${new Date(apt.appointmentTime).toLocaleString()}
+            </div>
+            <div class="appointment-detail">
+                <strong>📝 Details:</strong> ${apt.details || '(None provided)'}
+            </div>
+            <div class="appointment-detail" style="color:#666; font-size:0.9em;">
+                <strong>Submitted:</strong> ${apt.submittedAt}
+            </div>
+        </div>
+    `).join('');
+}
+
+// Auto-refresh appointments every 10 seconds when logged in
+setInterval(() => {
+    if (document.getElementById("appointmentsList").style.display !== "none") {
+        displayAppointments();
+    }
+}, 10000);
+</script>
+
+</body>
+</html>

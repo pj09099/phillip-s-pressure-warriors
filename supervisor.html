@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Systems – Phillip's Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#e3eaf2; padding:20px; }
+        .box { background:white; padding:25px; border-radius:10px; max-width:700px; margin:20px auto; }
+        input, select, textarea { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #bbb; }
+        button { width:100%; padding:12px; margin-top:15px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        button:hover { background:#162c42; }
+        h2 { color:#1e3d59; text-align:center; }
+        .section-title { background:#1e3d59; color:white; padding:10px; border-radius:6px; text-align:center; margin-bottom:10px; }
+        .ticket { background:#e8eef3; padding:15px; border-radius:8px; margin-top:15px; }
+    </style>
+</head>
+
+<body>
+
+<!-- SUPERVISOR LOGIN -->
+<div class="box" id="supervisorLogin">
+    <div class="section-title">Supervisor Login</div>
+    <p>Enter supervisor code to access supervisor tools.</p>
+
+    <input type="password" id="supervisorCode" placeholder="Enter supervisor code">
+    <button onclick="supervisorLogin()">Enter</button>
+
+    <p id="supervisorError" style="color:red; display:none;">Incorrect code.</p>
+</div>
+
+<!-- SUPERVISOR PANEL -->
+<div class="box" id="supervisorPanel" style="display:none;">
+    <div class="section-title">Supervisor Panel</div>
+
+    <button onclick="scrollToTickets()">View Reporting Tickets</button>
+    <button onclick="scrollToTickets()">View General Tickets</button>
+    <button onclick="alert('Applications page coming soon')">Review Applications</button>
+</div>
+
+<!-- OWNERSHIP LOGIN -->
+<div class="box" id="ownerLogin">
+    <div class="section-title">Ownership Login</div>
+    <p>Enter ownership code to access owner tools.</p>
+
+    <input type="password" id="ownerCode" placeholder="Enter ownership code">
+    <button onclick="ownerLogin()">Enter</button>
+
+    <p id="ownerError" style="color:red; display:none;">Incorrect code.</p>
+</div>
+
+<!-- OWNERSHIP PANEL -->
+<div class="box" id="ownerPanel" style="display:none;">
+    <div class="section-title">Ownership Panel</div>
+
+    <button onclick="scrollToTickets()">View Complaint Tickets</button>
+    <button onclick="scrollToTickets()">View All Tickets</button>
+    <button onclick="alert('Financial Advisory page coming soon')">Financial Advisory</button>
+</div>
+
+<!-- TICKET SYSTEM -->
+<div class="box" id="ticketSystem">
+    <div class="section-title">Support Ticket System</div>
+
+    <label>Your Name</label>
+    <input type="text" id="ticketName">
+
+    <label>Ticket Type</label>
+    <select id="ticketType">
+        <option value="general">General Help</option>
+        <option value="report">Reporting Ticket</option>
+        <option value="complaint">Complaint Ticket</option>
+    </select>
+
+    <label>Message</label>
+    <textarea id="ticketMsg" rows="5"></textarea>
+
+    <button onclick="submitTicket()">Submit Ticket</button>
+
+    <div id="ticketResult"></div>
+</div>
+
+<script>
+/* SUPERVISOR LOGIN */
+function supervisorLogin() {
+    let code = document.getElementById("supervisorCode").value.toLowerCase();
+
+    if (code === "alex09") {
+        document.getElementById("supervisorLogin").style.display = "none";
+        document.getElementById("supervisorPanel").style.display = "block";
+    } else {
+        document.getElementById("supervisorError").style.display = "block";
+    }
+}
+
+/* OWNER LOGIN */
+function ownerLogin() {
+    let code = document.getElementById("ownerCode").value.toLowerCase();
+
+    if (code === "phillip anthony") {
+        document.getElementById("ownerLogin").style.display = "none";
+        document.getElementById("ownerPanel").style.display = "block";
+    } else {
+        document.getElementById("ownerError").style.display = "block";
+    }
+}
+
+/* SCROLL TO TICKETS */
+function scrollToTickets() {
+    document.getElementById("ticketSystem").scrollIntoView({ behavior: "smooth" });
+}
+
+/* SUBMIT TICKET */
+function submitTicket() {
+    let name = document.getElementById("ticketName").value;
+    let type = document.getElementById("ticketType").value;
+    let msg = document.getElementById("ticketMsg").value;
+
+    let route = "";
+
+    if (type === "general") route = "Any worker past trial phase";
+    if (type === "report") route = "Supervisor+";
+    if (type === "complaint") route = "Owner & Co‑Owner only";
+
+    document.getElementById("ticketResult").innerHTML = `
+        <div class="ticket">
+            <h3>Ticket Submitted</h3>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Type:</strong> ${type}</p>
+            <p><strong>Message:</strong> ${msg}</p>
+            <p><strong>Routed To:</strong> ${route}</p>
+        </div>
+    `;
+}
+</script>
+
+</body>
+</html>
