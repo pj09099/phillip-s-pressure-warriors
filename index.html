@@ -2,126 +2,258 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Phillip's Pressure Warriors</title>
+    <title>Phillip's Pressure Warriors | Professional Pressure Washing Services</title>
     <style>
-        body { font-family: Arial, sans-serif; background:#f4f4f4; padding:20px; }
-        h1, h2, h3 { color:#222; }
-        .section { background:white; padding:20px; margin-bottom:20px; border-radius:8px; }
-        label { display:block; margin-top:10px; }
-        input, textarea { width:100%; padding:10px; margin-top:5px; border-radius:5px; border:1px solid #ccc; }
-        button { margin-top:15px; padding:12px 20px; background:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: Arial, sans-serif; background:#f4f4f4; line-height:1.6; }
+        
+        /* HEADER */
+        header { background:linear-gradient(135deg, #1e3d59 0%, #d62828 100%); color:white; padding:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+        .header-top { max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; }
+        .logo-section { display:flex; align-items:center; gap:15px; }
+        .company-name { font-size:1.8em; font-weight:bold; }
+        .slogan { font-size:0.9em; font-style:italic; color:#ffd700; }
+        .contact-header { text-align:right; }
+        .contact-header p { margin:3px 0; font-size:0.95em; }
+        
+        /* NAVIGATION */
+        nav { background:#1e3d59; padding:0; }
+        nav a { display:inline-block; padding:12px 20px; color:white; text-decoration:none; font-weight:bold; transition:all 0.3s; }
+        nav a:hover { background:#d62828; }
+        
+        .container { max-width:1200px; margin:auto; padding:20px; }
+        .section { background:white; padding:25px; margin-bottom:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2 { color:#1e3d59; margin-bottom:15px; }
+        h1 { font-size:2.2em; border-bottom:3px solid #d62828; padding-bottom:10px; }
+        .hero { background:linear-gradient(135deg, #1e3d59 0%, #333 100%); color:white; padding:40px; border-radius:8px; text-align:center; margin-bottom:20px; }
+        .hero h2 { color:white; border:none; }
+        .hero p { font-size:1.3em; margin:10px 0; }
+        .nav-links { text-align:center; margin-bottom:20px; }
+        .price-link { display:inline-block; margin:8px 5px; padding:12px 20px; background:#0077cc; color:white; text-decoration:none; border-radius:5px; font-weight:bold; transition:all 0.3s; }
+        .price-link:hover { background:#005fa3; transform:translateY(-2px); }
+        
+        ul { margin:15px 20px; }
+        li { margin:8px 0; }
+        label { display:block; margin-top:15px; font-weight:bold; }
+        input, textarea, select { width:100%; padding:12px; margin-top:5px; border-radius:5px; border:1px solid #ccc; }
+        button { margin-top:15px; padding:12px 20px; background:#0077cc; color:white; border:none; border-radius:5px; cursor:pointer; font-weight:bold; font-size:1em; }
         button:hover { background:#005fa3; }
-        .price-link { display:inline-block; margin:10px 5px; padding:12px 20px; background:#0077cc; color:white; text-decoration:none; border-radius:5px; font-weight:bold; }
-        .price-link:hover { background:#005fa3; }
-        .nav-links { text-align:center; }
+        
+        /* FOOTER */
+        footer { background:#1e3d59; color:white; padding:30px 20px; text-align:center; margin-top:40px; }
+        .footer-content { max-width:1200px; margin:auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; text-align:left; }
+        .footer-section h3 { margin-bottom:10px; color:#ffd700; }
+        .footer-section ul { list-style:none; margin:0; }
+        .footer-section a { color:#fff; text-decoration:none; }
+        .footer-section a:hover { color:#ffd700; }
+        .footer-bottom { text-align:center; margin-top:20px; padding-top:20px; border-top:1px solid #555; }
+        
+        /* TWO COLUMN LAYOUT */
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+        @media (max-width:768px) { .two-col { grid-template-columns:1fr; } .footer-content { grid-template-columns:1fr; } }
+        
+        /* FAQ SECTION */
+        .faq-item { background:#f9f9f9; padding:15px; margin:10px 0; border-left:4px solid #0077cc; cursor:pointer; }
+        .faq-item h4 { color:#1e3d59; margin:0; }
+        .faq-answer { display:none; margin-top:10px; padding-top:10px; border-top:1px solid #ddd; }
+        
+        /* WHY CHOOSE US */
+        .feature-box { background:#f0f8ff; padding:20px; border-radius:8px; border-left:5px solid #d62828; margin:10px 0; }
+        .feature-box h4 { color:#d62828; margin-bottom:8px; }
     </style>
 </head>
 <body>
 
-    <h1>Phillip's Pressure Warriors</h1>
-    <p><strong>We are hiring at this time.</strong> We clean the hardest things. Don't worry — we have power washers to clean cars.</p>
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <div>
+                    <div class="company-name">⚔️ PHILLIP'S PRESSURE WARRIORS</div>
+                    <div class="slogan">🔥 YOUR GRIME! OUR BATTLEFIELD 🔥</div>
+                </div>
+            </div>
+            <div class="contact-header">
+                <p><strong>📞 (319) 217-2874</strong></p>
+                <p>📧 phillipspressurewarriors@gmail.com</p>
+            </div>
+        </div>
+    </header>
 
-    <div class="section nav-links">
-        <a href="prices.html" class="price-link">💰 View Pricing & Services</a>
-        <a href="locations.html" class="price-link" style="background:#28a745;">📍 Service Areas</a>
-        <a href="appointments.html" class="price-link" style="background:#9c27b0;">📅 Book Appointment</a>
-        <a href="tickets.html" class="price-link" style="background:#ff9800;">🎫 Support Tickets</a>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="prices.html">💰 Pricing</a>
+        <a href="locations.html">📍 Service Areas</a>
+        <a href="appointments.html">📅 Book Now</a>
+        <a href="tickets.html">🎫 Support</a>
+        <a href="staffportal.html">🔐 Staff</a>
+    </nav>
+
+    <div class="container">
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <h2>⚔️ WE CLEAN THE HARDEST THINGS</h2>
+            <p>Professional Pressure Washing for Fairfield & Mt. Pleasant, IA</p>
+            <p style="margin-top:20px;">
+                <a href="appointments.html" class="price-link">📅 BOOK YOUR SERVICE TODAY</a>
+            </p>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="section nav-links" style="text-align:center;">
+            <a href="prices.html" class="price-link">💰 View Pricing</a>
+            <a href="locations.html" class="price-link" style="background:#28a745;">📍 Service Areas</a>
+            <a href="appointments.html" class="price-link" style="background:#9c27b0;">📅 Book Appointment</a>
+        </div>
+
+        <!-- WHY CHOOSE US -->
+        <div class="section">
+            <h2>⭐ Why Choose Phillip's Pressure Warriors?</h2>
+            <div class="two-col">
+                <div class="feature-box">
+                    <h4>🛡️ Professional & Reliable</h4>
+                    <p>We stand behind every job with a signed contract. Your satisfaction is guaranteed.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>💪 Powerful Equipment</h4>
+                    <p>State-of-the-art power washers tackle even the toughest dirt and grime.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>✅ Local & Trusted</h4>
+                    <p>Serving Fairfield and Mt. Pleasant since day one. We know our community.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>📍 Transparent Pricing</h4>
+                    <p>No hidden fees. Clear pricing upfront with documented contracts for every job.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICES OVERVIEW -->
+        <div class="section">
+            <h2>🧹 Our Services</h2>
+            <p>We offer comprehensive pressure washing solutions:</p>
+            <ul>
+                <li><strong>🚗 Vehicle Washing</strong> - Cars, trucks, SUVs with professional detailing</li>
+                <li><strong>🏠 Home Exterior</strong> - Siding, driveways, decks, fences, sidewalks</li>
+                <li><strong>🪟 Window Cleaning</strong> - Residential and commercial glass</li>
+                <li><strong>🪜 Gutter Services</strong> - Exterior and interior gutter cleaning</li>
+                <li><strong>🧼 Add-On Services</strong> - Mold treatment, oil stain removal, concrete cleaning</li>
+            </ul>
+            <p style="margin-top:20px;">
+                <a href="prices.html" style="display:inline-block; padding:10px 20px; background:#0077cc; color:white; text-decoration:none; border-radius:5px;">📋 View Full Pricing</a>
+            </p>
+        </div>
+
+        <!-- SERVICE AREAS -->
+        <div class="section">
+            <h2>📍 We Service</h2>
+            <div class="two-col">
+                <div>
+                    <h3>🏙️ Fairfield, IA</h3>
+                    <p>Jefferson County - South-Central Iowa</p>
+                </div>
+                <div>
+                    <h3>🏘️ Mt. Pleasant, IA</h3>
+                    <p>Henry County - South-Central Iowa</p>
+                </div>
+            </div>
+            <p style="margin-top:15px; color:#d62828; font-weight:bold;">Travel fees: $10–$20 (distance-based)</p>
+        </div>
+
+        <!-- CONTRACT SECTION -->
+        <div class="section" style="background:#fff3cd; border-left:5px solid #ff9800;">
+            <h2 style="color:#ff9800;">⚠️ Contract Requirement</h2>
+            <p><strong>NO SIGNATURE. NO SERVICE.</strong></p>
+            <p>Every job requires a signed service contract. This protects both you and us with clear expectations, agreed pricing, and documented approval. We'll explain the contract and read it to you if needed.</p>
+            <p style="font-style:italic; margin-top:10px;">— Owner: Phillip Hibbets</p>
+        </div>
+
+        <!-- FAQ SECTION -->
+        <div class="section">
+            <h2>❓ Frequently Asked Questions</h2>
+            
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h4>💬 How far do you travel?</h4>
+                <div class="faq-answer">We service Fairfield and Mt. Pleasant, IA. Travel fees ($10–$20) apply based on distance. Contact us for service outside these areas.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h4>💬 Do you offer seasonal services?</h4>
+                <div class="faq-answer">We work year-round for pressure washing needs. Call us to discuss availability and seasonal scheduling.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h4>💬 What if I'm not satisfied?</h4>
+                <div class="faq-answer">Your satisfaction matters. We work closely with customers and stand behind our contract-backed service. Contact us immediately if issues arise.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h4>💬 Do you offer discounts for multiple services?</h4>
+                <div class="faq-answer">Yes! Contact us for package deals and discounts on multiple services at one location.</div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h4>💬 How do I book an appointment?</h4>
+                <div class="faq-answer">Use our online booking form on the appointments page, call us at 319-217-2874, or email us. We'll confirm your appointment promptly.</div>
+            </div>
+        </div>
+
+        <!-- BOOKING FORM -->
+        <div class="section">
+            <h2>✉️ Quick Contact</h2>
+            <form action="#" method="POST">
+                <label>Name</label>
+                <input type="text" name="name" required>
+
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+                <label>Phone</label>
+                <input type="tel" name="phone" required>
+
+                <label>Message</label>
+                <textarea name="message" rows="5" required></textarea>
+
+                <button type="submit">📤 Send Message</button>
+            </form>
+        </div>
     </div>
 
-    <!-- SERVICES -->
-    <div class="section">
-        <h2>Services</h2>
-        <p>Below is a full list of our services and pricing. Prices may vary depending on size, dirt level, and difficulty.</p>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>📞 Contact Us</h3>
+                <p>Phone: (319) 217-2874</p>
+                <p>Email: phillipspressurewarriors@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>🔗 Quick Links</h3>
+                <ul>
+                    <li><a href="prices.html">Pricing</a></li>
+                    <li><a href="locations.html">Service Areas</a></li>
+                    <li><a href="appointments.html">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>📍 Service Areas</h3>
+                <p>Fairfield, IA</p>
+                <p>Mt. Pleasant, IA</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Phillip's Pressure Warriors. All rights reserved. ⚔️ YOUR GRIME! OUR BATTLEFIELD 🔥</p>
+        </div>
+    </footer>
 
-        <h3>Trip & Fuel Costs</h3>
-        <ul>
-            <li>Travel / Gas Fee: $10–$20 (distance-based)</li>
-            <li>Equipment Fuel Cost: $5 per job</li>
-        </ul>
-
-        <h3>Vehicle Exterior Cleaning</h3>
-        <ul>
-            <li>Car Exterior Wash: $25</li>
-            <li>Truck / SUV Exterior Wash: $35</li>
-            <li>Full Detail Add‑On: +$15</li>
-            <li>Rims & Tire Shine: +$15</li>
-        </ul>
-
-        <h3>Home Exterior Services</h3>
-        <ul>
-            <li>House Siding Wash: $80–$150 (size‑based)</li>
-            <li>Driveway Cleaning: $40–$75 (size & dirt‑based)</li>
-            <li>Sidewalk / Walkway Cleaning: $15–$30</li>
-            <li>Deck / Porch Cleaning: $30–$60</li>
-            <li>Fence Cleaning: $25–$50</li>
-        </ul>
-
-        <h3>Gutter Services</h3>
-        <p><em>We rarely offer gutter services.</em></p>
-        <ul>
-            <li>Gutter Exterior Wash: $25–$40</li>
-            <li>Gutter Interior Clean: $40–$60</li>
-            <li>Downspout Flush: $10</li>
-        </ul>
-
-        <h3>Window Cleaning</h3>
-        <ul>
-            <li>Exterior Window Wash: $30–$60</li>
-            <li>Full Home Window Package: $60–$120</li>
-            <li>Screen Cleaning Add‑On: +$10</li>
-        </ul>
-
-        <h3>Add‑On Services</h3>
-        <ul>
-            <li>Mold / Mildew Treatment: $10–$20</li>
-            <li>Oil Stain Removal: +$15</li>
-            <li>Patio / Concrete Pad Cleaning: $20–$40</li>
-        </ul>
-    </div>
-
-    <!-- CONTRACT REQUIREMENT -->
-    <div class="section">
-        <h2>Contract Requirement</h2>
-        <p>
-            Before ANY job begins, you <strong>MUST</strong> sign a service contract.  
-            <strong>No exceptions.</strong>
-        </p>
-        <p>
-            If you do not sign the contract, we will not clean your house, car, gutters, windows, or any service you request.
-        </p>
-        <p>
-            This protects both you and Phillip's Pressure Warriors by making sure every job has clear expectations, agreed pricing, and documented approval.
-        </p>
-        <p>
-            If you do not understand the contract, we will read it to you and explain it part by part.  
-            If you refuse to sign or say "I'll sign after," we will NOT perform the job.
-        </p>
-        <p><strong>No signature, no service. — Owner: Phillip Hibbets</strong></p>
-    </div>
-
-    <!-- BOOKING FORM -->
-    <div class="section">
-        <h2>Book Your Service</h2>
-        <form action="#" method="POST">
-            <label>First & Last Name</label>
-            <input type="text" name="name" required>
-
-            <label>Email Address</label>
-            <input type="email" name="email" required>
-
-            <label>Your Message</label>
-            <textarea name="message" rows="5" required></textarea>
-
-            <button type="submit">Submit Booking Request</button>
-        </form>
-    </div>
-
-    <!-- CONTACT INFO -->
-    <div class="section">
-        <h2>Contact Us</h2>
-        <p><strong>Phone:</strong> 319-217-2874</p>
-        <p><strong>Email:</strong> phillipspressurewarriors@gmail.com</p>
-    </div>
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 
 </body>
 </html>

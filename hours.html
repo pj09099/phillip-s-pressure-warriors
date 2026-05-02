@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Hours – Phillip's Pressure Warriors</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: Arial, sans-serif; background:#f4f4f4; line-height:1.6; }
+        
+        header { background:linear-gradient(135deg, #1e3d59 0%, #d62828 100%); color:white; padding:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+        .header-top { max-width:1200px; margin:auto; display:flex; justify-content:space-between; align-items:center; }
+        .logo-section { display:flex; align-items:center; gap:15px; }
+        .company-name { font-size:1.8em; font-weight:bold; }
+        .slogan { font-size:0.9em; font-style:italic; color:#ffd700; }
+        .contact-header { text-align:right; }
+        .contact-header p { margin:3px 0; font-size:0.95em; }
+        
+        nav { background:#1e3d59; padding:0; }
+        nav a { display:inline-block; padding:12px 20px; color:white; text-decoration:none; font-weight:bold; transition:all 0.3s; }
+        nav a:hover { background:#d62828; }
+        
+        .container { max-width:1200px; margin:auto; padding:20px; }
+        .section { background:white; padding:25px; margin-bottom:20px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+        h1, h2 { color:#1e3d59; margin-bottom:15px; }
+        h1 { font-size:2.2em; border-bottom:3px solid #d62828; padding-bottom:10px; }
+        
+        footer { background:#1e3d59; color:white; padding:30px 20px; text-align:center; margin-top:40px; }
+        
+        .summer-notice { background:#ff6b6b; color:white; padding:20px; border-radius:8px; margin-bottom:20px; border-left:6px solid #d62828; }
+        .summer-notice h2 { color:white; border:none; }
+        .summer-notice p { font-size:1.05em; margin:10px 0; }
+        
+        .hours-grid { display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0; }
+        .hour-card { background:linear-gradient(135deg, #f0f8ff 0%, #e8f4ff 100%); padding:20px; border-radius:8px; border-left:4px solid #0077cc; }
+        .day-name { font-weight:bold; color:#1e3d59; font-size:1.1em; margin-bottom:8px; }
+        .day-hours { color:#333; font-size:1.05em; }
+        .closed { color:#d62828; font-weight:bold; }
+        .open { color:#28a745; font-weight:bold; }
+        
+        .special-hours { background:#fff3cd; padding:20px; border-radius:8px; margin:20px 0; border-left:4px solid #ff9800; }
+        .special-hours h3 { color:#ff9800; margin-bottom:10px; }
+        .special-event { background:white; padding:15px; margin:10px 0; border-radius:5px; border-left:3px solid #ff9800; }
+        
+        .two-col { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+        @media (max-width:768px) { .hours-grid { grid-template-columns:1fr; } .two-col { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo-section">
+                <div>
+                    <div class="company-name">⚔️ PHILLIP'S PRESSURE WARRIORS</div>
+                    <div class="slogan">🔥 YOUR GRIME! OUR BATTLEFIELD 🔥</div>
+                </div>
+            </div>
+            <div class="contact-header">
+                <p><strong>📞 (319) 217-2874</strong></p>
+                <p>📧 phillipspressurewarriors@gmail.com</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="hours.html">🕐 Hours</a>
+        <a href="locations.html">📍 Service Areas</a>
+        <a href="appointments.html">📅 Book Now</a>
+    </nav>
+
+    <div class="container">
+        <h1>🕐 Business Hours & Availability</h1>
+
+        <!-- IMPORTANT NOTICE -->
+        <div class="summer-notice">
+            <h2>⚠️ SEASONAL OPPORTUNITY - SUMMER JOB</h2>
+            <p><strong>THIS IS A SUMMER JOB ONLY.</strong></p>
+            <p>Phillip's Pressure Warriors operates primarily during the <strong>summer months</strong>. Hours and availability vary based on season and weather conditions.</p>
+            <p style="margin-top:15px; font-weight:bold;">🚨 LIMITED HIRING - We do NOT hire large numbers of people. We maintain a small, dedicated team focused on quality service.</p>
+            <p style="margin-top:10px;">If you're interested in opportunities, contact us directly. We only bring on staff when operational needs require it.</p>
+        </div>
+
+        <!-- REGULAR HOURS -->
+        <div class="section">
+            <h2>📅 Regular Operating Hours</h2>
+            <p style="color:#666; margin-bottom:15px;"><em>Hours subject to change based on weather and seasonal availability</em></p>
+
+            <div class="hours-grid">
+                <div class="hour-card">
+                    <div class="day-name">Sunday</div>
+                    <div class="day-hours"><span class="closed">🔴 CLOSED</span></div>
+                </div>
+
+                <div class="hour-card">
+                    <div class="day-name">Monday</div>
+                    <div class="day-hours"><span class="closed">🔴 CLOSED</span></div>
+                </div>
+
+                <div class="hour-card">
+                    <div class="day-name">Tuesday</div>
+                    <div class="day-hours"><span class="open">🟢 OPEN</span><br>9:30 AM – 4:30 PM</div>
+                </div>
+
+                <div class="hour-card">
+                    <div class="day-name">Wednesday</div>
+                    <div class="day-hours"><span class="open">🟢 OPEN</span><br>10:00 AM – 4:00 PM</div>
+                </div>
+
+                <div class="hour-card">
+                    <div class="day-name">Thursday</div>
+                    <div class="day-hours"><span class="open">🟢 OPEN</span><br>9:30 AM – 4:30 PM</div>
+                </div>
+
+                <div class="hour-card">
+                    <div class="day-name">Friday</div>
+                    <div class="day-hours"><span class="open">🟢 OPEN</span><br>9:30 AM – 4:30 PM</div>
+                </div>
+
+                <div class="hour-card">
+                    <div class="day-name">Saturday</div>
+                    <div class="day-hours"><span class="open">🟢 OPEN</span><br>10:00 AM – 3:00 PM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPECIAL HOURS -->
+        <div class="special-hours">
+            <h3>🎉 Special Hours & Holidays</h3>
+            
+            <div class="special-event">
+                <strong>📅 Memorial Day - May 25, 2026</strong>
+                <div style="margin-top:8px; color:#d62828; font-weight:bold;">
+                    🔴 CLOSED
+                </div>
+                <p style="margin-top:5px; color:#666; font-size:0.95em;">We honor Memorial Day. Regular hours resume the following day.</p>
+            </div>
+
+            <p style="margin-top:15px; color:#666; font-size:0.95em;">
+                <em>Note: Hours may change for other holidays. Call ahead to confirm availability: (319) 217-2874</em>
+            </p>
+        </div>
+
+        <!-- BOOKING & AVAILABILITY -->
+        <div class="section">
+            <h2>📞 How to Book</h2>
+            <p>Want to schedule a service? We offer flexible appointment booking:</p>
+            
+            <div class="two-col" style="margin-top:20px;">
+                <div style="background:#f0f8ff; padding:20px; border-radius:8px;">
+                    <h3 style="color:#0077cc;">📅 Online Booking</h3>
+                    <p>Use our online appointment form for immediate scheduling.</p>
+                    <a href="appointments.html" style="display:inline-block; margin-top:10px; padding:10px 15px; background:#0077cc; color:white; text-decoration:none; border-radius:5px;">Book Online</a>
+                </div>
+
+                <div style="background:#fff0e6; padding:20px; border-radius:8px;">
+                    <h3 style="color:#ff9800;">📞 Call Us</h3>
+                    <p>Speak with our team directly for custom scheduling needs.</p>
+                    <p style="margin-top:10px; font-weight:bold;">🔴 (319) 217-2874</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- IMPORTANT INFO -->
+        <div class="section" style="background:#e8f4ff;">
+            <h2>ℹ️ Important Information</h2>
+            <ul style="margin:15px 0 15px 20px; line-height:1.8;">
+                <li>✅ <strong>Seasonal Business:</strong> We operate primarily in summer months (availability varies)</li>
+                <li>✅ <strong>Limited Crew:</strong> Small team ensures quality service and attention to detail</li>
+                <li>✅ <strong>Contract Required:</strong> All appointments require a signed service contract</li>
+                <li>✅ <strong>Weather Dependent:</strong> Extreme weather may affect scheduling</li>
+                <li>✅ <strong>Call Ahead:</strong> For custom scheduling or off-hours requests, always call first</li>
+            </ul>
+        </div>
+
+        <!-- SERVICE AREAS -->
+        <div class="section">
+            <h2>📍 Service Areas</h2>
+            <p>We serve:</p>
+            <ul style="margin:15px 0 15px 20px;">
+                <li>🏙️ <strong>Fairfield, IA</strong> - Jefferson County</li>
+                <li>🏘️ <strong>Mt. Pleasant, IA</strong> - Henry County</li>
+            </ul>
+            <p style="margin-top:15px; color:#d62828; font-weight:bold;">Travel fees: $10–$20 (distance-based)</p>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align:center; margin:30px 0;">
+            <a href="appointments.html" style="display:inline-block; padding:15px 30px; background:#0077cc; color:white; text-decoration:none; border-radius:5px; font-weight:bold; font-size:1.1em;">📅 Schedule Your Service</a>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; text-align:left; margin-bottom:20px;">
+            <div>
+                <h3 style="color:#ffd700;">📞 Contact</h3>
+                <p>Phone: (319) 217-2874</p>
+                <p>Email: phillipspressurewarriors@gmail.com</p>
+            </div>
+            <div>
+                <h3 style="color:#ffd700;">🕐 Hours</h3>
+                <p>Tue-Fri: 9:30 AM - 4:30 PM</p>
+                <p>Wed: 10:00 AM - 4:00 PM</p>
+                <p>Sat: 10:00 AM - 3:00 PM</p>
+            </div>
+            <div>
+                <h3 style="color:#ffd700;">📍 Service Areas</h3>
+                <p>Fairfield, IA</p>
+                <p>Mt. Pleasant, IA</p>
+            </div>
+        </div>
+        <div style="text-align:center; padding-top:20px; border-top:1px solid #555;">
+            <p>&copy; 2026 Phillip's Pressure Warriors. ⚔️ YOUR GRIME! OUR BATTLEFIELD 🔥</p>
+            <p style="font-size:0.9em; margin-top:5px;">Seasonal Summer Business - Limited Crew</p>
+        </div>
+    </footer>
+
+</body>
+</html>

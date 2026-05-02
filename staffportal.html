@@ -6,37 +6,44 @@
     <style>
         body { font-family: Arial, sans-serif; background:#e9eef3; padding:20px; }
         .box { background:white; padding:25px; border-radius:10px; max-width:500px; margin:auto; }
-        input { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #bbb; }
-        button { width:100%; padding:12px; margin-top:15px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; }
+        input { width:100%; padding:12px; margin-top:10px; border-radius:6px; border:1px solid #bbb; box-sizing:border-box; }
+        button { width:100%; padding:12px; margin-top:15px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:bold; }
         button:hover { background:#162c42; }
-        h2 { text-align:center; color:#1e3d59; }
-        .links a { display:block; margin-top:12px; text-align:center; color:#1e3d59; font-weight:bold; text-decoration:none; }
+        h2 { text-align:center; color:#1e3d59; margin-top:0; }
+        .error { color:red; display:none; margin-top:10px; }
     </style>
 </head>
 
 <body>
 
 <div class="box">
-    <h2>Staff Portal Login</h2>
-    <p>Authorized staff only. Enter your access code below.</p>
+    <h2>🔐 Staff Portal Login</h2>
+    <p style="text-align:center; color:#666;">Authorized staff only. Enter your access code below.</p>
 
     <input type="password" id="code" placeholder="Enter access code">
 
-    <button onclick="login()">Enter Portal</button>
+    <button onclick="login()">Enter Staff Portal</button>
 
-    <p id="error" style="color:red; display:none; margin-top:10px;">Incorrect code.</p>
+    <p id="error" class="error">❌ Incorrect code. Access denied.</p>
 </div>
 
 <script>
 function login() {
     let code = document.getElementById("code").value.toLowerCase();
 
-    if (code === "bandit09") {
-        window.location.href = "staffpanel.html";
+    if (code === "bandit87") {
+        window.location.href = "staffaccess.html";
     } else {
         document.getElementById("error").style.display = "block";
     }
 }
+
+// Allow Enter key to submit
+document.getElementById('code').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        login();
+    }
+});
 </script>
 
 </body>

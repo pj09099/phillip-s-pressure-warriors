@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Access Menu – Phillip's Pressure Warriors</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#dde6f0; padding:20px; }
+        .wrap { max-width:700px; margin:auto; }
+        .card { background:white; padding:20px; border-radius:10px; margin-bottom:20px; }
+        h1 { color:#1e3d59; text-align:center; }
+        h2 { color:#24476b; margin-top:0; }
+        button { width:100%; padding:12px 18px; background:#1e3d59; color:white; border:none; border-radius:6px; cursor:pointer; font-weight:bold; margin-top:10px; }
+        button:hover { background:#162c42; }
+        .logout-btn { background:#d9534f; }
+        .logout-btn:hover { background:#ac2925; }
+        .welcome { text-align:center; color:#666; margin-bottom:20px; }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <h1>👤 Staff Access Portal</h1>
+    <p class="welcome">Welcome to Phillip's Pressure Warriors Staff Portal. Select your access level below.</p>
+
+    <!-- Staff Panel -->
+    <div class="card">
+        <h2>👷 Staff Member Access</h2>
+        <p>General staff member tools and resources.</p>
+        <button onclick="window.location.href='staffpanel.html'">Access Staff Panel</button>
+    </div>
+
+    <!-- Supervisor Panel -->
+    <div class="card">
+        <h2>👨‍💼 Supervisor Access</h2>
+        <p>Supervisor tools for managing tickets and staff. Use code: <strong>alex09</strong> on the next page.</p>
+        <button onclick="window.location.href='supervisor.html'">Access Supervisor Panel</button>
+    </div>
+
+    <!-- Ownership Panel -->
+    <div class="card">
+        <h2>🔑 Ownership Access</h2>
+        <p>Ownership tools for viewing appointments and full system access. Use code: <strong>phillip anthony</strong> on the next page.</p>
+        <button onclick="window.location.href='ownership.html'">Access Ownership Panel</button>
+    </div>
+
+    <!-- Logout -->
+    <div class="card" style="text-align:center;">
+        <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+    </div>
+</div>
+
+<script>
+function logout() {
+    if (confirm('Are you sure you want to logout?')) {
+        window.location.href = 'staffportal.html';
+    }
+}
+</script>
+
+</body>
+</html>
